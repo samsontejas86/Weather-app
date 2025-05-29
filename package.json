@@ -1,0 +1,51 @@
+{
+  "name": "weather-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.17",
+    "@heroicons/react": "^2.0.18",
+    "@react-three/drei": "^9.88.7",
+    "@react-three/fiber": "^8.15.11",
+    "@tanstack/react-query": "^5.8.4",
+    "@types/lodash": "^4.17.17",
+    "@types/mapbox-gl": "^3.4.1",
+    "@types/three": "^0.158.2",
+    "axios": "^1.6.2",
+    "framer-motion": "^10.16.5",
+    "leaflet": "^1.9.4",
+    "lodash": "^4.17.21",
+    "mapbox-gl": "^3.12.0",
+    "postcss": "^8.4.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-leaflet": "^4.2.1",
+    "tailwindcss": "^3.3.5",
+    "three": "^0.158.0",
+    "zustand": "^4.4.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@types/leaflet": "^1.9.8",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/react-leaflet": "^2.8.3",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "globals": "^16.0.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  }
+}

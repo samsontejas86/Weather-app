@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+  }
+}
+
+@layer components {
+  .dashboard-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+
+  .weather-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-lg p-6 shadow-lg;
+  }
+
+  .search-container {
+    @apply relative w-full max-w-2xl mx-auto mb-8;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-2 pl-10 rounded-lg 
+           border border-gray-300 dark:border-gray-600 
+           bg-white dark:bg-gray-800 
+           text-gray-900 dark:text-white
+           focus:ring-2 focus:ring-primary-500 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  .search-icon {
+    @apply absolute left-3 top-1/2 -translate-y-1/2 
+           w-5 h-5 text-gray-400 
+           pointer-events-none;
+  }
+
+  .location-button {
+    @apply px-4 py-2 rounded-lg 
+           bg-primary-500 text-white
+           hover:bg-primary-600 
+           focus:outline-none focus:ring-2 
+           focus:ring-primary-500 focus:ring-offset-2
+           transition-all duration-200 
+           flex items-center gap-2;
+  }
+
+  .search-results {
+    @apply absolute w-full mt-2 
+           bg-white dark:bg-gray-800 
+           rounded-lg shadow-lg 
+           border border-gray-200 dark:border-gray-700 
+           max-h-96 overflow-auto 
+           z-10;
+  }
+
+  .search-result-item {
+    @apply w-full px-4 py-3 
+           text-left 
+           hover:bg-gray-50 dark:hover:bg-gray-700
+           transition-colors duration-150 
+           flex items-center gap-3;
+  }
+
+  .location-tag {
+    @apply px-3 py-1.5 rounded-full 
+           text-sm font-medium
+           transition-colors duration-150;
+  }
+
+  .location-tag-saved {
+    @apply bg-primary-100 dark:bg-primary-900/50
+           text-primary-700 dark:text-primary-100
+           hover:bg-primary-200 dark:hover:bg-primary-800;
+  }
+
+  .location-tag-recent {
+    @apply bg-gray-100 dark:bg-gray-800
+           text-gray-700 dark:text-gray-300
+           hover:bg-gray-200 dark:hover:bg-gray-700;
+  }
+
+  .weather-details {
+    @apply grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6;
+  }
+
+  .weather-detail-item {
+    @apply flex items-center gap-3 p-4
+           bg-gray-50 dark:bg-gray-800/50
+           rounded-lg;
+  }
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out forwards;
+}
+
+/* Loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Custom scrollbar */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Glass effect for weather cards */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Modern gradient backgrounds */
+.bg-weather-gradient {
+  @apply bg-gradient-to-br from-primary-500 to-primary-700;
+}
+
+.bg-weather-night {
+  @apply bg-gradient-to-br from-gray-900 to-gray-800;
+}
+
+/* Canvas styles */
+canvas {
+  touch-action: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Map container */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+}
+
+/* Dark mode map */
+.dark .leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.dark .leaflet-container {
+  background: #303030;
+}
